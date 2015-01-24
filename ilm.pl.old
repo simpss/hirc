@@ -22,8 +22,6 @@ sub update {
 			$temp{$name} = $1;
 			$temp{Tartu} = $temp{$name} if $name =~ /^Tartu-T/;
 			$temp{Tallinn} = $temp{$name} if $name eq 'Tallinn-Harku';
-			$temp{Rapla} = $temp{$name} if $name eq 'Kuusiku';
-			$temp{Rakvere} = $temp{$name} if $name eq 'Väike-Maarja';
 			push @parnu, $temp{$name}
 				 if $name_ =~ /P.rnu/ && $temp{$name} =~ /\d/;
 		}
@@ -73,7 +71,7 @@ sub update {
 	#$m = sprintf "%02d", $m;
 	#$ilm = "kell $h:$m";
 	my @ilm;
-	for (qw(Tallinn Tartu Rapla Viljandi Räpina Pärnu Rakvere Võru)) {
+	for (qw(Tallinn Tartu Viljandi Keila Pärnu Võru)) {
 		push @ilm, "$_: $temp{$_}°C" if defined $temp{$_}
 	}
 	$ilm = join '; ', @ilm;

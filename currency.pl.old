@@ -44,9 +44,7 @@ sub init {
 my $sum;
 my $cur;
 
-if ($ARGV[0] =~ /^\s*(\d+(?:\.\d+)?)(\w+)\s*$/) {
-	#print "$1 $2\n";
-	#exit 0;
+if ($ARGV[0] =~ /^\s*(\d+(?:\.\d+)?)\s+(\w+)\s*$/) {
 	$sum = $1;
 	$cur = $2;
 } elsif ($ARGV[0] =~ /^\s*(\w+)\s*$/) {
