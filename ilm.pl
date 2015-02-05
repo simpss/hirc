@@ -20,7 +20,7 @@ sub update {
 			$name =~ s/ *\([^)]*\)//;
 		} elsif (/<airtemperature>(.*)<\/airtemperature>/) {
 			$temp{$name} = $1;
-			$temp{Tartu} = $temp{$name} if $name =~ /^Tartu-T/;
+			$temp{Tartu} = $temp{$name} if $name eq 'Tartu-Kvissental';
 			$temp{Tallinn} = $temp{$name} if $name eq 'Tallinn-Harku';
 			$temp{Rapla} = $temp{$name} if $name eq 'Kuusiku';
 			$temp{Rakvere} = $temp{$name} if $name eq 'Väike-Maarja';
@@ -73,7 +73,7 @@ sub update {
 	#$m = sprintf "%02d", $m;
 	#$ilm = "kell $h:$m";
 	my @ilm;
-	for (qw(Tallinn Tartu Rapla Viljandi Räpina Pärnu Rakvere Võru)) {
+	for (qw(Tallinn Tartu Pärnu Rakvere Võru)) {
 		push @ilm, "$_: $temp{$_}°C" if defined $temp{$_}
 	}
 	$ilm = join '; ', @ilm;

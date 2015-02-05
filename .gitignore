@@ -1,2 +1,5 @@
 *.dat
 hircrc
+base.dict
+eurofxref-daily.xml
+
